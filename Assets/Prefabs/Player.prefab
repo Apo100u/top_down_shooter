@@ -165,6 +165,7 @@ MonoBehaviour:
   movement: {fileID: 5970416297576792152}
   combat: {fileID: 7501729581391040818}
   health: {fileID: 8657240272595777948}
+  hud: {fileID: 0}
 --- !u!114 &398920845415580854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,25 +325,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7341161784368628980}
     m_Modifications:
-    - target: {fileID: 1122580045491496183, guid: ee8efc14c0b67f84eb5ee29e873577ff,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122580045491496183, guid: ee8efc14c0b67f84eb5ee29e873577ff,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.304
-      objectReference: {fileID: 0}
     - target: {fileID: 1122580046015835960, guid: ee8efc14c0b67f84eb5ee29e873577ff,
         type: 3}
       propertyPath: m_Name
       value: Shotgun
-      objectReference: {fileID: 0}
-    - target: {fileID: 1122580046015835960, guid: ee8efc14c0b67f84eb5ee29e873577ff,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1122580046015835961, guid: ee8efc14c0b67f84eb5ee29e873577ff,
         type: 3}
@@ -399,11 +385,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4812420260223845861, guid: ee8efc14c0b67f84eb5ee29e873577ff,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.503
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8efc14c0b67f84eb5ee29e873577ff, type: 3}
 --- !u!4 &7638811133892353382 stripped
@@ -439,7 +420,7 @@ PrefabInstance:
     - target: {fileID: 3169948110493447976, guid: c198f3e6f3ddf9f489cd48e3c4c4c3ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3169948110493447977, guid: c198f3e6f3ddf9f489cd48e3c4c4c3ac,
         type: 3}

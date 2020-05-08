@@ -24,6 +24,11 @@ public class PlayerInput : MonoBehaviour
         GetMovementInput();
         GetWeaponInput();
         GetMouseTarget();
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void GetMovementInput()

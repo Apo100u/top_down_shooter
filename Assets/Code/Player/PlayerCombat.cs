@@ -26,8 +26,9 @@ public class PlayerCombat : MonoBehaviour
     {
         if (currentWeapon != weapon)
         {
-            currentWeapon?.gameObject.SetActive(false);
-            weapon.gameObject.SetActive(true);
+            currentWeapon?.Body.SetActive(false);
+            weapon.Body.SetActive(true);
+            player.Hud.UpdateWeaponImage(weapon.SpriteUI);
 
             currentWeapon = weapon;
         }

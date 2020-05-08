@@ -4,29 +4,31 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
+    public float MaxHealth { get { return maxHealth; } }
 
-    public event Action<float> OnDamageTaken;
+    public event Action OnHealthChanged;
     public event Action OnAllHealthLost;
 
-    private float currentHealth;
+    public float CurrentHealth { get; private set; }
 
     public void SetAsMax()
     {
-        currentHealth = maxHealth;
+        CurrentHealth = maxHealth;
+        OnHealthChanged?.Invoke();
     }
 
     public void ChangeCurrentBy(float value)
     {
-        if (currentHealth != 0)
+        if (CurrentHealth != 0)
         {
-            currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
+            CurrentHealth = Mathf.Clamp(CurrentHealth + value, 0, maxHealth);
 
-            if (value < 0)
+            if (value != 0)
             {
-                OnDamageTaken?.Invoke(-value);
+                OnHealthChanged?.Invoke();
             }
 
-            if (currentHealth == 0)
+            if (CurrentHealth == 0)
             {
                 OnAllHealthLost?.Invoke();
             }

@@ -26,18 +26,21 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        playerInAttackRange = Vector2.Distance(
-            Vector2.right * transform.position.x + Vector2.up * transform.position.z,
-            Vector2.right * player.transform.position.x + Vector2.up * player.transform.position.z) <= attackRange;
+        if (player.Health.CurrentHealth > 0)
+        {
+            playerInAttackRange = Vector2.Distance(
+                Vector2.right * transform.position.x + Vector2.up * transform.position.z,
+                Vector2.right * player.transform.position.x + Vector2.up * player.transform.position.z) <= attackRange;
 
 
-        if (playerInAttackRange)
-        {
-            AttackPlayer();
-        }
-        else
-        {
-            ChasePlayer();
+            if (playerInAttackRange)
+            {
+                AttackPlayer();
+            }
+            else
+            {
+                ChasePlayer();
+            }
         }
     }
 
@@ -59,5 +62,6 @@ public class Enemy : MonoBehaviour
     private void OnAllHealthLost()
     {
         enemyPool.Return(this.gameObject);
+        player.AddScore();
     }
 }
