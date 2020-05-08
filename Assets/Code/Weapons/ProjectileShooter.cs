@@ -11,6 +11,7 @@ public class ProjectileShooter : Weapon
     private Dictionary<GameObject, float> shotProjectilesDistances = new Dictionary<GameObject, float>();
     private List<GameObject> projectilesToDisable = new List<GameObject>();
     private Vector3 projectileMovement = new Vector3();
+    private Collider[] hitColliders;
 
     public override void OnSuccessfulUse()
     {
@@ -19,7 +20,10 @@ public class ProjectileShooter : Weapon
 
     private void Update()
     {
-        ManageShotProjectiles();
+        if (shotProjectilesDistances.Count > 0)
+        {
+            ManageShotProjectiles();
+        }
     }
 
     private void ManageShotProjectiles()
@@ -54,14 +58,31 @@ public class ProjectileShooter : Weapon
 
     private void CheckProjectileHit(GameObject projectile)
     {
+        hitColliders = Physics.OverlapSphere(projectile.transform.position, 0.1f);
 
+        Health health;
+
+        if (hitColliders.Length > 0)
+        {
+            for (int i = 0; i < hitColliders.Length; i++)
+            {
+                health = hitColliders[i].GetComponent<Health>();
+
+                if (health != null)
+                {
+                    health.ChangeCurrentBy(-Random.Range(data.MinDamage, data.MaxDamage));
+                }
+            }
+
+            AddProjectileToDisable(projectile);
+        }
     }
 
     private void AddProjectileToDisable(GameObject projectile)
     {
         if (!projectilesToDisable.Contains(projectile))
         {
-                projectilesToDisable.Add(projectile);
+            projectilesToDisable.Add(projectile);
         }
     }
 }

@@ -2,7 +2,7 @@
 
 public abstract class Weapon : MonoBehaviour
 {
-    [SerializeField] private WeaponData data;
+    [SerializeField] protected WeaponData data;
 
     private float lastUseTime = 0f;
 

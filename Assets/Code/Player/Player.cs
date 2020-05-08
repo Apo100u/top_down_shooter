@@ -21,5 +21,6 @@ public class Player : MonoBehaviour
     {
         input.OnUpdate();
         movement.OnUpdate();
+        combat.OnUpdate();
     }
 }

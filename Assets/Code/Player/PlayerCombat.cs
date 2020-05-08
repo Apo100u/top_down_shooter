@@ -4,12 +4,21 @@ public class PlayerCombat : MonoBehaviour
 {
     [SerializeField] private Weapon[] weapons;
 
+    private Player player;
     private Weapon currentWeapon;
 
     public void Init(Player player)
     {
+        this.player = player;
         SetWeapon(weapons[0]);
-        player.Input.OnFireButtonDown += OnFireButtonDown;
+    }
+
+    public void OnUpdate()
+    {
+        if (player.Input.FireButtonPressed)
+        {
+            currentWeapon.TryUse();
+        }
     }
 
     private void SetWeapon(Weapon weapon)
@@ -21,10 +30,5 @@ public class PlayerCombat : MonoBehaviour
 
             currentWeapon = weapon;
         }
-    }
-
-    private void OnFireButtonDown()
-    {
-        currentWeapon.TryUse();
     }
 }
