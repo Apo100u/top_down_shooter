@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private string horizontalInputAxis = "Horizontal";
     [SerializeField] private string verticalInputAxis = "Vertical";
+    [SerializeField] private KeyCode fireKey = KeyCode.Mouse0;
+
+    public event Action OnFireButtonDown;
 
     public float HorizontalInput { get; private set; }
     public float VerticalInput { get; private set; }
@@ -16,6 +20,7 @@ public class PlayerInput : MonoBehaviour
     public void OnUpdate()
     {
         GetMovementInput();
+        CheckFireInput();
         GetMouseTarget();
     }
 
@@ -23,6 +28,14 @@ public class PlayerInput : MonoBehaviour
     {
         HorizontalInput = Input.GetAxisRaw(horizontalInputAxis);
         VerticalInput = Input.GetAxisRaw(verticalInputAxis);
+    }
+
+    private void CheckFireInput()
+    {
+        if (Input.GetKeyDown(fireKey))
+        {
+            OnFireButtonDown?.Invoke();
+        }
     }
 
     private void GetMouseTarget()
