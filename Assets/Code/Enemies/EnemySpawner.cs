@@ -10,6 +10,15 @@ public class EnemySpawner : MonoBehaviour
     private float timer = 0;
     private Enemy spawnedEnemy;
 
+    //private void Start()
+    //{
+    //    spawnPoint.position = new Vector3(-1, 0, -1);
+    //    SpawnEnemy();
+
+    //    spawnPoint.position = new Vector3(1, 0, 1);
+    //    SpawnEnemy();
+    //}
+
     private void Update()
     {
         timer += Time.deltaTime;

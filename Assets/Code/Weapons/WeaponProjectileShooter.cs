@@ -6,7 +6,6 @@ public class WeaponProjectileShooter : Weapon
 {
     [SerializeField] private GameObjectPool projectilePool;
     [SerializeField] private float projectileSpeed;
-    [SerializeField] private float projectileRange;
 
     private Dictionary<GameObject, float> shotProjectilesDistances = new Dictionary<GameObject, float>();
     private List<GameObject> projectilesToDisable = new List<GameObject>();
@@ -37,7 +36,7 @@ public class WeaponProjectileShooter : Weapon
 
             shotProjectilesDistances[shotProjectile] += projectileMovement.magnitude;
 
-            if (shotProjectilesDistances[shotProjectile] >= projectileRange)
+            if (shotProjectilesDistances[shotProjectile] >= range)
             {
                 AddProjectileToDisable(shotProjectile);
             }
@@ -70,7 +69,7 @@ public class WeaponProjectileShooter : Weapon
 
                 if (health != null)
                 {
-                    health.ChangeCurrentBy(-Random.Range(data.MinDamage, data.MaxDamage));
+                    health.ChangeCurrentBy(-Random.Range(minDamage, maxDamage));
                 }
             }
 

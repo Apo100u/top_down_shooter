@@ -234,7 +234,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f67b8a3e32296047ad2cdad96aab014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: f465ba3265c941f48821a5dae3601a77, type: 2}
+  minDamage: 15
+  maxDamage: 35
+  cooldown: 0.3
+  range: 20
   projectilePool: {fileID: 0}
   projectileSpeed: 30
-  projectileRange: 20

@@ -16,6 +16,8 @@ public class Health : MonoBehaviour
 
     public void ChangeCurrentBy(float value)
     {
+        Debug.Log(name + "lost health.");
+
         if (currentHealth != 0)
         {
             currentHealth = Mathf.Clamp(currentHealth + value, 0, maxHealth);
