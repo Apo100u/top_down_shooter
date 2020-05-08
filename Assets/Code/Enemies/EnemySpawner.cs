@@ -2,6 +2,7 @@
 
 public class EnemySpawner : MonoBehaviour
 {
+    [SerializeField] private Player player;
     [SerializeField] private float spawnCooldown = 5f;
     [SerializeField] private GameObjectPool enemyPool;
     [SerializeField] private Transform spawnPoint;
@@ -9,15 +10,6 @@ public class EnemySpawner : MonoBehaviour
 
     private float timer = 0;
     private Enemy spawnedEnemy;
-
-    //private void Start()
-    //{
-    //    spawnPoint.position = new Vector3(-1, 0, -1);
-    //    SpawnEnemy();
-
-    //    spawnPoint.position = new Vector3(1, 0, 1);
-    //    SpawnEnemy();
-    //}
 
     private void Update()
     {
@@ -38,7 +30,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (!spawnedEnemy.Initialized)
         {
-            spawnedEnemy.Init(enemyPool);
+            spawnedEnemy.Init(player, enemyPool);
         }
 
         spawnedEnemy.GetComponent<Health>().SetAsMax();

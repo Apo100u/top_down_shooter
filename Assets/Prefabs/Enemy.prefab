@@ -317,6 +317,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: {fileID: 8864291322955209418}
+  movementSpeed: 2.5
+  attackRange: 0.9
+  attackCooldown: 2
+  minDamage: 5
+  maxDamage: 10
 --- !u!114 &8864291322955209418
 MonoBehaviour:
   m_ObjectHideFlags: 0

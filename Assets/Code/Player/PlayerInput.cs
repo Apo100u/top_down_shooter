@@ -7,6 +7,9 @@ public class PlayerInput : MonoBehaviour
     [SerializeField] private string horizontalInputAxis = "Horizontal";
     [SerializeField] private string verticalInputAxis = "Vertical";
     [SerializeField] private KeyCode fireKey = KeyCode.Mouse0;
+    [SerializeField] private KeyCode[] weaponKeys;
+
+    public event Action<int> OnWeaponKeyPressed;
 
     public float HorizontalInput { get; private set; }
     public float VerticalInput { get; private set; }
@@ -19,7 +22,7 @@ public class PlayerInput : MonoBehaviour
     public void OnUpdate()
     {
         GetMovementInput();
-        GetFireInput();
+        GetWeaponInput();
         GetMouseTarget();
     }
 
@@ -29,9 +32,17 @@ public class PlayerInput : MonoBehaviour
         VerticalInput = Input.GetAxisRaw(verticalInputAxis);
     }
 
-    private void GetFireInput()
+    private void GetWeaponInput()
     {
         FireButtonPressed = Input.GetKey(fireKey);
+
+        for (int i = 0; i < weaponKeys.Length; i++)
+        {
+            if (Input.GetKeyDown(weaponKeys[i]))
+            {
+                OnWeaponKeyPressed?.Invoke(i);
+            }
+        }
     }
 
     private void GetMouseTarget()

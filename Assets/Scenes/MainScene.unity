@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &197700498 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2555184723177407250, guid: 40dc420926eb61749af57266e7a75db7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1081377387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76b46904039d4e4a8b33f255a194847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &197700499 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7450741011786377278, guid: 40dc420926eb61749af57266e7a75db7,
@@ -160,18 +172,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &412205939 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5095733361570783861, guid: 40dc420926eb61749af57266e7a75db7,
-    type: 3}
-  m_PrefabInstance: {fileID: 1081377387}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e98fba0ad256ab469dbe827a8782bfc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &617173030
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +217,18 @@ Transform:
   m_Father: {fileID: 284816334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &680851935 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7563164163094687127, guid: 40dc420926eb61749af57266e7a75db7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1081377387}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f67b8a3e32296047ad2cdad96aab014, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,6 +380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf74348853310e84ebb9f5fa40d87ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 197700498}
   spawnCooldown: 5
   enemyPool: {fileID: 1394589568}
   spawnPoint: {fileID: 761115741}
@@ -579,7 +592,7 @@ PrefabInstance:
         type: 3}
       propertyPath: weapons.Array.data[0]
       value: 
-      objectReference: {fileID: 412205939}
+      objectReference: {fileID: 680851935}
     - target: {fileID: 7563164163094687127, guid: 40dc420926eb61749af57266e7a75db7,
         type: 3}
       propertyPath: projectilePool

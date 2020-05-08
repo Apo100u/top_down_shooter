@@ -11,8 +11,12 @@ public class Player : MonoBehaviour
     [SerializeField] private PlayerCombat combat;
     public PlayerCombat Combat { get { return combat; } }
 
+    [SerializeField] private Health health;
+    public Health Health { get { return health; } }
+
     private void Start()
     {
+        health.SetAsMax();
         movement.Init(this);
         combat.Init(this);
     }

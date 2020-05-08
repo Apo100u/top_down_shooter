@@ -10,14 +10,15 @@ public class PlayerCombat : MonoBehaviour
     public void Init(Player player)
     {
         this.player = player;
+        player.Input.OnWeaponKeyPressed += OnWeaponKeyPressed;
         SetWeapon(weapons[0]);
     }
 
-    public void OnUpdate()
+    private void OnWeaponKeyPressed(int index)
     {
-        if (player.Input.FireButtonPressed)
+        if (index < weapons.Length)
         {
-            currentWeapon.TryUse();
+            SetWeapon(weapons[index]);
         }
     }
 
@@ -29,6 +30,14 @@ public class PlayerCombat : MonoBehaviour
             weapon.gameObject.SetActive(true);
 
             currentWeapon = weapon;
+        }
+    }
+
+    public void OnUpdate()
+    {
+        if (player.Input.FireButtonPressed)
+        {
+            currentWeapon.TryUse();
         }
     }
 }
