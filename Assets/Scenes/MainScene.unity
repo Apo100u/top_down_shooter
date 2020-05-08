@@ -682,7 +682,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 197700498}
-  spawnCooldown: 5
+  spawnCooldown: 3
   enemyPool: {fileID: 1394589568}
   spawnPoint: {fileID: 761115741}
   spawnPositions:
@@ -1054,6 +1054,16 @@ PrefabInstance:
       propertyPath: bulletsTransform
       value: 
       objectReference: {fileID: 1533723766}
+    - target: {fileID: 5095733361570783861, guid: 40dc420926eb61749af57266e7a75db7,
+        type: 3}
+      propertyPath: raysPerShot
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5445489259167880159, guid: 40dc420926eb61749af57266e7a75db7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5628242430238756653, guid: 40dc420926eb61749af57266e7a75db7,
         type: 3}
       propertyPath: m_IsActive
