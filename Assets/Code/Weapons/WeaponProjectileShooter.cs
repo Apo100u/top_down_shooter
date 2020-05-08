@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProjectileShooter : Weapon
+public class WeaponProjectileShooter : Weapon
 {
     [SerializeField] private GameObjectPool projectilePool;
     [SerializeField] private float projectileSpeed;

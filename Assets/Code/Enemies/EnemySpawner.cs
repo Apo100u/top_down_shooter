@@ -23,6 +23,8 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy()
     {
+        spawnPoint.position = spawnPositions[Random.Range(0, spawnPositions.Length)];
+
         spawnedEnemy = enemyPool.Take().GetComponent<Enemy>();
 
         if (!spawnedEnemy.Initialized)
